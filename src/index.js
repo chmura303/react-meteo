@@ -5,6 +5,7 @@ import './index.css';
 import Countries from './Countries';
 import Count from './Count';
 import Countdown from './Countdown';
+import Users from './Users';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,5 +14,6 @@ root.render(
     <Count enabled={false} incrementBy={1} />
     <Count enabled={true} incrementBy={10} />
     <Countdown />
+    <Users />
   </>
 );

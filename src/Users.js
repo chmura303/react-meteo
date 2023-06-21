@@ -1,4 +1,30 @@
-const grades = [8, 10, 12];
+import { useState } from 'react';
+import './App.css';
+
+export default function Users() {
+  const [users, setUsers] = useState([4, 8, 10, 17, 13]);
+
+  function handleRemoveClick() {
+    setUsers(users.slice(1));
+  }
+
+  return (
+    <>
+      <div>
+        <ul>
+          {users.map(user => (
+            <li key={user}>{user}</li>
+          ))}
+        </ul>
+        <button onClick={handleRemoveClick}>Remove 1st user</button>
+      </div>
+    </>
+  );
+}
+
+// ----------
+
+// const grades = [8, 10, 12];
 
 // const updateGrades = grades =>
 //   grades.map(grade => (grade >= 10 ? grade + 1 : grade));
@@ -18,3 +44,6 @@ const grades = [8, 10, 12];
 
 // const subset = grades.filter((grade, index) => index !== 0);
 // console.log(subset); // [ 10, 12 ]
+
+// .map, .filter, .slice - immutable
+// .splice - mutable(!)
